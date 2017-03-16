@@ -1,0 +1,57 @@
+Yago Uriel - 13/0018732 - Microcontroladores e Microprocessadores 
+
+Q1. Quais as diferenças entre os barramentos de dados e de endereços?
+
+Resposta:
+O barramento de dados é utilizado para transmitir dados entre as unidades
+O barramento de endereços é usado selecionar a origem ou destino de sinais trasmitidos num dos outros varramentos ou numa de suas linhas.
+
+ Q2. Quais são as diferenças entre as memórias RAM e ROM?
+
+Resposta:
+A memória RAM é uma memoria de acesso rapido, Volatil. Perde o conteúdo quando acaba a energia. Pode acessar endereços aleatorios sem seguir uma sequencia.
+A memória ROM é uma memoria não volatil, mantem o conteudo quando acaba a energia. A escrita é mais lenta do que para a memória RAM.
+
+ Q3. Considere o código abaixo, de 12 linhas:
+
+    1.   #include <stdio.h>
+    2.   int main(void)
+    3.   {
+    4.      int i;
+    5.      printf("Insira um número inteiro: ");
+    6.      scanf("%d", &i);
+    7.      if(i%2)
+    8.         printf("%d eh impar.\n");
+    9.      else
+   10.         printf("%d eh par.\n");
+   11.      return 0;
+   12.   }
+
+Para este código, responda:
+	(a) A variável 'i' é armazenada na memória RAM ou ROM? Por quê?
+	(b) O programa compilado a partir deste código é armazenado na memória RAM ou ROM? Por quê?
+
+Respostas : 
+A) A varaivel i é armazenada na memória RAM pois o valor de i pode ser alterado durante o programa, e ele é utilizado volatilmente durante o programa. Apenas o valor final de i deve ser aramazenado pela memoria ROM.
+B) O programa copilado apartir desse codigo deve ser aramazenado na memoria ROM pois sempre que quiser acessar aquele codigo não será necessario reescreve-lo toda vez que a energia for desligada, deve ser fixo. 
+
+ Q4. Quais são as diferenças, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
+
+Resposta: 
+A arquitetura harvard permite leitura simultanea de dados e do programa. Permite barramentos de dados e programa separadamente otimizados. guarda dados constantes na memoria de program, o que requer instruções especificas.
+A arquitetura Neumann também conhecida como arquitetura princeton. Mais simples que a arquitetura Harvard. porém é menos eficiente.
+
+ Q5. Considere a variável inteira 'i', armazenando o valor 0x8051ABCD. Se 'i' é armazenada na memória a partir do endereço 0x0200, como ficam este byte e os seguintes, considerando que a memória é:
+	
+Resposta:
+	(a) Little-endian?
+“Little Endian” significa que o byte de menor ordem do número é armazenado na memória nos menores endereçoes, e os de maior ordem nos maiores endereços (o “little end” vem primeiro.)
+	(b) Big-endian?
+“Big Endian” significa que os bytes de maior ordem de um número serão armazenados nos menores endereços, e os de menor ordem nos maiores endereços. (o “big end” vem primeiro.)
+
+ Q6. Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas variáveis de 32 bits?
+
+
+
+
+
