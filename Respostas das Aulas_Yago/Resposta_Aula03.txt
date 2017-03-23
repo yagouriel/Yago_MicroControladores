@@ -1,0 +1,63 @@
+Data: 22/03/2017
+
+Yago Uriel Fernandez da Silva
+13/0018732
+
+1. Dada uma variável 'a' do tipo 'char' (um byte), escreva os trechos de código em C para:
+	(a) Somente setar o bit menos significativo de 'a'.
+	
+	resposta: a |= 0x01
+
+	(b) Somente setar dois bits de 'a': o menos significativo e o segundo menos significativo.
+	
+	resposta: a |= 0x3
+
+	(c) Somente zerar o terceiro bit menos significativo de 'a'.
+
+	resposta: a &= 0xFB
+
+	(d) Somente zerar o terceiro e o quarto bits menos significativo de 'a'.
+	
+	resposta: a &= 0xF3
+
+	(e) Somente inverter o bit mais significativo de 'a'.
+
+	resposta : a &= (~a | (0x7f)) #Setou o bit inverteu e fixou o resto 
+
+	(f) Inverter o nibble mais significativo de 'a', e setar o nibble menos significativo de 'a'. 
+
+	resposta: a = (~(a) & 0xF0) | 0xF0 ;
+
+2. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar os dois LEDs ininterruptamente.
+	
+Resposta :
+
+#DEFINE LED1 BIT0 
+#DEFINE LED2 BIT6
+void main(void){
+WDTCTL = WDTPW | WDTHOLD;
+PI DIR = 0x41;
+PI OUT = 0x41; 
+for(;;)
+
+
+3. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar duas vezes os dois LEDs sempre que o usuário pressionar o botão.
+
+Resposta:
+
+
+4. Considerando a placa Launchpad do MSP430, faça uma função em C que pisca os dois LEDs uma vez.
+
+
+5. Reescreva o código da questão 2 usando a função da questão 4.
+
+
+6. Reescreva o código da questão 3 usando a função da questão 4.
+
+
+
+
+
+##| utilizado para setar o bit, operador de ou 
+##& utilizando para zera o bit, operador de E
+##Endereço de memoria sempre em hexadeximal 
