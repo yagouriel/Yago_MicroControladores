@@ -1,24 +1,24 @@
 Yago Uriel - 13/0018732 - Microcontroladores e Microprocessadores 
 
-Q1. Quais as diferenÁas entre os barramentos de dados e de endereÁos?
+Q1. Quais as diferen√ßas entre os barramentos de dados e de endere√ßos?
 
 Resposta:
-O barramento de dados È utilizado para transmitir dados entre as unidades
-O barramento de endereÁos È usado selecionar a origem ou destino de sinais trasmitidos num dos outros varramentos ou numa de suas linhas.
+O barramento de dados √© utilizado para transmitir dados entre as unidades
+O barramento de endere√ßos √© usado selecionar a origem ou destino de sinais trasmitidos num dos outros varramentos ou numa de suas linhas.
 
- Q2. Quais s„o as diferenÁas entre as memÛrias RAM e ROM?
+ Q2. Quais s√£o as diferen√ßas entre as mem√≥rias RAM e ROM?
 
 Resposta:
-A memÛria RAM È uma memoria de acesso rapido, Volatil. Perde o conte˙do quando acaba a energia. Pode acessar endereÁos aleatorios sem seguir uma sequencia.
-A memÛria ROM È uma memoria n„o volatil, mantem o conteudo quando acaba a energia. A escrita È mais lenta do que para a memÛria RAM.
+A mem√≥ria RAM √© uma memoria de acesso rapido, Volatil. Perde o conte√∫do quando acaba a energia. Pode acessar endere√ßos aleatorios sem seguir uma sequencia.
+A mem√≥ria ROM √© uma memoria n√£o volatil, mantem o conteudo quando acaba a energia. A escrita √© mais lenta do que para a mem√≥ria RAM.
 
- Q3. Considere o cÛdigo abaixo, de 12 linhas:
+ Q3. Considere o c√≥digo abaixo, de 12 linhas:
 
     1.   #include <stdio.h>
     2.   int main(void)
     3.   {
     4.      int i;
-    5.      printf("Insira um n˙mero inteiro: ");
+    5.      printf("Insira um n√∫mero inteiro: ");
     6.      scanf("%d", &i);
     7.      if(i%2)
     8.         printf("%d eh impar.\n");
@@ -27,30 +27,28 @@ A memÛria ROM È uma memoria n„o volatil, mantem o conteudo quando acaba a energi
    11.      return 0;
    12.   }
 
-Para este cÛdigo, responda:
-	(a) A vari·vel 'i' È armazenada na memÛria RAM ou ROM? Por quÍ?
-	(b) O programa compilado a partir deste cÛdigo È armazenado na memÛria RAM ou ROM? Por quÍ?
+Para este c√≥digo, responda:
+	(a) A vari√°vel 'i' √© armazenada na mem√≥ria RAM ou ROM? Por qu√™?
+R: A vari√°vel i, por ser uma vari√°vel global intermedi√°ria que pode ser atualizada a qualquer momento, atrav√©s de atribui√ß√µes ou opera√ß√µes alg√©bricas, √© necess√°rio que ela seja armazenada na mem√≥ria RAM, visto que sua leitura e escrita deve ser r√°pida.
+	(b) O programa compilado a partir deste c√≥digo √© armazenado na mem√≥ria RAM ou ROM? Por qu√™?
+R: O programa ocupa um espa√ßo significativo de mem√≥ria e √© realizada apenas a sua leitura, o que justifica a escrita desse programa na mem√≥ria ROM e assegura a integridade do programa quando a fonte energ√©tica for retirada. 
 
-Respostas : 
-A) A varaivel i È armazenada na memÛria RAM pois o valor de i pode ser alterado durante o programa, e ele È utilizado volatilmente durante o programa. Apenas o valor final de i deve ser aramazenado pela memoria ROM.
-B) O programa copilado apartir desse codigo deve ser aramazenado na memoria ROM pois sempre que quiser acessar aquele codigo n„o ser· necessario reescreve-lo toda vez que a energia for desligada, deve ser fixo. 
+Q4. A arquitetura Von Neumann possue o caminho de dados e de endere√ßos compartilhadas para registradores de mem√≥ria RAM e ROM, o que inviabiliza a leitura de dados da mem√≥ria RAM e da mem√≥ria ROM ao mesmo tempo, Por outro lado essa arquitetura facilita quanto a leitura constantes e vari√°veis, que n√£o √© distinguida nessa configura√ß√£o. A arquitetura Harvard √© a arquitetura na qual o caminho de dados e endere√ßos para a mem√≥ria RAM e ROM s√£o separados, o que otimiza o processo de leitura de um dado vol√°til e a execu√ß√£o do programa, visto que podem ser lidos dados das duas mem√≥rias ao mesmo tempo, o que a torna mais eficiente do que a arquitetura Von Neumann nesse aspecto. Por outro lado, os dados provenientes de c√°lculos(constantes), devem ser armazenados na mem√≥ria ROM para que essas sejam lidas da mesma forma que as vari√°veis presentes nas mem√≥rias.
 
- Q4. Quais s„o as diferenÁas, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
-
-Resposta: 
-A arquitetura harvard permite leitura simultanea de dados e do programa. Permite barramentos de dados e programa separadamente otimizados. guarda dados constantes na memoria de program, o que requer instruÁıes especificas.
-A arquitetura Neumann tambÈm conhecida como arquitetura princeton. Mais simples que a arquitetura Harvard. porÈm È menos eficiente.
-
- Q5. Considere a vari·vel inteira 'i', armazenando o valor 0x8051ABCD. Se 'i' È armazenada na memÛria a partir do endereÁo 0x0200, como ficam este byte e os seguintes, considerando que a memÛria È:
+Q5. Considere a vari√°vel inteira 'i', armazenando o valor 0x8051ABCD. Se 'i' √© armazenada na mem√≥ria a partir do endere√ßo 0x0200, como ficam este byte e os seguintes, considerando que a mem√≥ria √©:
+	(a) Little-endian? 0x0200 = CD ; 0x0201 = AB; 0x202 = 51; 0x203 = 80;
+    	(b) Big-endian? 0x0200 = 80; 0x201 = 51; 0x202 = AB; 0x203 = CD;
+Q6. Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas vari√°veis de 32 bits?
+R: Para manipular dados de 32bits, √© necess√°rio o uso das flags contidas no registrador STATUS, tais como as flags C, N, V, Z. Com a flag C, contida nesse registrador, √© poss√≠vel somar os 16 bits menos significativos e a partir dessa flag, realizar a opera√ß√£o novamente com os 16 bits mais significativos.
 	
 Resposta:
 	(a) Little-endian?
-ìLittle Endianî significa que o byte de menor ordem do n˙mero È armazenado na memÛria nos menores endereÁoes, e os de maior ordem nos maiores endereÁos (o ìlittle endî vem primeiro.)
+‚ÄúLittle Endian‚Äù significa que o byte de menor ordem do n√∫mero √© armazenado na mem√≥ria nos menores endere√ßoes, e os de maior ordem nos maiores endere√ßos (o ‚Äúlittle end‚Äù vem primeiro.)
 	(b) Big-endian?
-ìBig Endianî significa que os bytes de maior ordem de um n˙mero ser„o armazenados nos menores endereÁos, e os de menor ordem nos maiores endereÁos. (o ìbig endî vem primeiro.)
+‚ÄúBig Endian‚Äù significa que os bytes de maior ordem de um n√∫mero ser√£o armazenados nos menores endere√ßos, e os de menor ordem nos maiores endere√ßos. (o ‚Äúbig end‚Äù vem primeiro.)
 
- Q6. Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas vari·veis de 32 bits?
-
+ Q6. Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas vari√°veis de 32 bits?
+R: Para que seja poss√≠vel manipular dados de 32bits, √© necess√°rio o uso das flags contidas no registrador STATUS, tais como as flags C, N, V, Z. Com a flag C, contida nesse registrador, √© poss√≠vel somar os 16 bits menos significativos e a partir dessa flag, realizar a opera√ß√£o novamente com os 16 bits mais significativos.
 
 
 
